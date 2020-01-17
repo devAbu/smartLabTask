@@ -36,3 +36,7 @@ div.addBtn {
 div.elPad {
     padding-bottom: 10px;
 }
+
+dialog {
+    width: 50%;
+}

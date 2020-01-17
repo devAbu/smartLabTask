@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +16,12 @@
 <body>
 
     <section>
-        <form action="">
+        <form action="dbSend/addNew.php">
+            <?php
+
+            echo '<input type="text" value="' . $_SESSION["email"] . '" name="creator" hidden>';
+
+            ?>
             <div class="addBtn elPad">
                 <label for="name">License name:</label>
                 <input type="text" name="name" id="name" placeholder="Name...">
@@ -26,13 +34,10 @@
 
             <div class="elPad">
                 <label for="period">License period:</label>
-                <input type="text" name="period" id="period" placeholder="Days">
+                <input type="number" name="period" id="period" placeholder="Days">
             </div>
-
-            <button type="submit">Update</button>
-            <a href="home.html">
-                <button type="button">Cancel</button>
-            </a>
+            <button type="submit">Save</button>
+            <button type="reset">Cancel</button>
         </form>
     </section>
 
