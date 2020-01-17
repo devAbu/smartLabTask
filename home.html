@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Licenses manager - Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div>
+        <button>Add new licence <i class="far fa-plus-square"></i></button>
+    </div>
+
+    <div>
+        <form action="">
+            <span>Search:</span>
+            <input type="search" name="search" id="search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+    <div>
+        <form action="">
+            <span>Filter by:</span>
+            <select name="filter" id="filter">
+                <option value="-1">Select type</option>
+                <option value="0">Monthly</option>
+                <option value="1">Yearly</option>
+            </select>
+        </form>
+    </div>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Licenses Name</th>
+                    <th>Creator Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>juhu</td>
+                    <td>abu</td>
+                    <td>
+                        <form action="">
+                            <button type="button">Edit <i class="far fa-edit"></i></button>
+                            <button type="submit">Delete <i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>huju</td>
+                    <td>oba</td>
+                    <td>
+                        <form action="">
+                            <button type="button">Edit <i class="far fa-edit"></i></button>
+                            <button type="submit">Delete <i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>juhu</td>
+                    <td>combe</td>
+                    <td>
+                        <form action="">
+                            <button type="button">Edit <i class="far fa-edit"></i></button>
+                            <button type="submit">Delete <i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

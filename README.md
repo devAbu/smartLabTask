@@ -1,2 +1,3 @@
 # smartLabTask
- ...
+
+Licenses manager
