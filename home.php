@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_REQUEST['type'])) {
+    $selectedType = $_REQUEST["type"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +38,7 @@ session_start();
         <div class="elPad">
             <form action="">
                 <span>Filter by:</span>
-                <select name="filter" id="filter">
+                <select name="filter" id="filter" onchange="filterType()">
                     <option value="-1">Select type</option>
                     <option value="0">Monthly</option>
                     <option value="1">Yearly</option>
@@ -63,6 +66,16 @@ session_start();
                 require 'connection/connect.php';
 
                 $sql = "SELECT * FROM licenses";
+
+                if (isset($_REQUEST['type'])) {
+                    if ($selectedType == 0) {
+                        $sql .= " where type = 'monthly'";
+                    } else {
+                        $sql .= " where type = 'yearly'";
+                    }
+                }
+
+
                 $result = $dbc->query($sql);
 
                 $count = $result->num_rows;
@@ -103,6 +116,11 @@ session_start();
         function deleteLicense() {
             var ID = document.getElementsByTagName("dialog")[0].id
             location.href = "delete.php?ID=" + ID;
+        }
+
+        function filterType() {
+            var selected = document.getElementById('filter').value;
+            location.href = "home.php?type=" + selected;
         }
     </script>
 
