@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 table,
@@ -14,4 +15,24 @@ th,
 td {
     padding: 10px;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    text-align: center;
+}
+
+table {
+    display: inline-block;
+}
+
+div.addBtn {
+    margin-top: 10%;
+}
+
+div.elPad {
+    padding-bottom: 10px;
 }
