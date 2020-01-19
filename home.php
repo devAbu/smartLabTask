@@ -28,7 +28,7 @@ if (isset($_REQUEST['type'])) {
 
 
         <div class="elPad">
-            <form action="">
+            <form>
                 <span>Search:</span>
                 <input type="search" name="search" id="search" placeholder="Search...">
                 <button type="submit"><i class="fas fa-search"></i></button>
@@ -70,10 +70,18 @@ if (isset($_REQUEST['type'])) {
                 if (isset($_REQUEST['type'])) {
                     if ($selectedType == 0) {
                         $sql .= " where type = 'monthly'";
-                    } else {
+                    } else if ($selectedType == 1) {
                         $sql .= " where type = 'yearly'";
                     }
+                } else {
+                    if (isset($_REQUEST['search'])) {
+                        $search = $_REQUEST["search"];
+
+                        $sql .= " where name LIKE '%" . $search . "%' or type LIKE '%" . $search . "%' or creator LIKE '%" . $search . "%'";
+                    }
                 }
+
+
 
 
                 $result = $dbc->query($sql);
